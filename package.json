@@ -1,0 +1,63 @@
+{
+  "name": "deserialize-ts",
+  "version": "0.1.0",
+  "description": "A TypeScript library for deserializing JSON data, inspired by Elm JSON Decoders.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/chriskrycho/deserialize-ts",
+  "bugs": "https://github.com/chriskrycho/deserialize-ts",
+  "author": "Chris Krycho",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/jest": "^21.1.5",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "prettier": "^1.8.2",
+    "true-myth": "^1.1.1",
+    "ts-jest": "^21.2.1",
+    "typescript": "^2.6.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "tdd": "jest --watch",
+    "precommit": "yarn run prettier --write"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "collectCoverage": true,
+    "mapCoverage": true,
+    "collectCoverageFrom": [
+      "src/*"
+    ],
+    "coveragePathIgnorePatterns": [
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "statements": 100,
+        "lines": 100
+      }
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "proseWrap": false
+  }
+}
