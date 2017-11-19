@@ -41,7 +41,7 @@ export function decode<D>(
     let rule = prop as Rules<D>[K]; // Workaround for TS inanity.
     return rule.decode(payload[propName]).mapErr(e => `${propName}: ${e}`);
   });
-  console.log(results);
+
   const errs = results.filter(Result.isErr).map(Result.unsafelyUnwrapErr);
   if (errs.length > 0) {
     return Result.err(errs);
